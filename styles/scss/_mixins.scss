@@ -21,3 +21,18 @@
         }
     }
 }
+
+@mixin bodyStyle {
+    background-color: $secondaryColor;
+    height: 500px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin boxStyle {
+    box-shadow: 0 4px 4px 0 rgba(30 , 30 , 20 , 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+}

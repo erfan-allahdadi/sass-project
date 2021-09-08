@@ -65,8 +65,81 @@ body{background-color: $bgColor;}
     }
 }
 
+
+/************************* content styles ***********************/
+
+.main{
+    display: flex;
+    margin: 2rem 3rem;
+    
+    aside{
+        flex-direction: column;
+        width: 25%;
+        margin-right: 25px;
+        @include bodyStyle;
+        @include boxStyle;
+        border: 5px solid $primaryColor;
+
+
+        div{
+            background-color: $primaryColor;
+            width: 85%;
+            height: 100px;
+            margin: 10px 10px;
+            line-height: 100px;
+            text-align: center;
+            @include boxStyle;
+            @include textStyle(1.2rem , bold , $secondaryColor);
+        }
+    }
+    main{
+        width: 75%;
+        @include bodyStyle;
+        @include boxStyle;
+        flex-direction: column;
+        border: 5px solid $primaryColor;
+
+        img{
+            width: 250px;
+            @include boxStyle;
+        }
+
+        h2{
+            @include textStyle(3rem , bold , $primaryColor);
+            margin: 2rem 0 1.5rem;
+        }
+
+        p{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+}
+
+
+/************************* responsive with media Query ************************/
+
 @include media(M){
     .hamburger-menu{display: flex;}
 
     .navbar{display: none;}
+
+    .main{
+        flex-direction: column-reverse;
+        margin: 1rem;
+
+        main{
+            width: calc(100% - 2rem);
+            height: 500px;
+            margin-bottom: 20px;
+
+            p{
+                font-size: 1rem;
+            }
+        }
+
+        aside{
+            width: calc(100% - 2rem);
+        }
+    }
 }
