@@ -41,7 +41,7 @@ body{background-color: $bgColor;}
         @include textStyle(1rem , bold , $secondaryColor);
 
         &:hover{
-            color: $textColor;
+            color: $textColor;  
         }
     }
 
